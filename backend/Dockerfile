@@ -8,7 +8,7 @@ WORKDIR /app
 
 COPY package.json package-lock.json ./
 RUN npm install -g node-gyp
-RUN npm config set fetch-retry-maxtimeout 100000 -g && npm install
+RUN npm config set fetch-retry-maxtimeout 200000 -g && npm install
 ENV PATH /app/node_modules/.bin:$PATH
 
 WORKDIR /app

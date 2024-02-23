@@ -5,7 +5,9 @@ services:
   backend:
     container_name: strapi-backend
     build: ./backend
+    restart: always
     environment:
+      Database_Client: sqlite
       NODE_ENV: development
     volumes:
       - ./backend/config:/app/config
@@ -19,6 +21,7 @@ services:
   nextjs:
     container_name: nextjs-frontend
     build: ./frontend
+    restart: always
     environment:
       NODE_ENV: development
     volumes:
