@@ -1,0 +1,10 @@
+Dockerfile*
+node_modules
+.vscode
+.git
+.gitignore
+.tmp
+.cache
+.git
+.env
+build

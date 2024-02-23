@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+
+  backend:
+    container_name: strapi-backend
+    build: ./backend
+    environment:
+      NODE_ENV: development
+    volumes:
+      - ./backend/config:/app/config
+      - ./backend/src:/app/src
+      - ./backend/package.json:/app/package.json
+      - ./backend/.env:/app/.env
+      - ./backend/public/uploads:/app/public/uploads
+    ports:
+      - "1339:1339"
+
+  nextjs:
+    container_name: nextjs-frontend
+    build: ./frontend
+    environment:
+      NODE_ENV: development
+    volumes:
+      - ./frontend:/app
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
