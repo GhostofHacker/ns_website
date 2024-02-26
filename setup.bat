@@ -14,7 +14,7 @@ if %errorlevel% neq 0 (
 echo Creating backend .env file.
 call npm run env
 if %errorlevel% neq 0 (
-    echo Failed to run 'npm run ev' in backend.
+    echo Failed to create .env file..
     exit /b %errorlevel%
 )
 echo Building Strapi.
@@ -45,7 +45,7 @@ rem Build the docker image
 echo Building Docker Images.
 call docker-compose build --no-cache
 if %errorlevel% neq 0 (
-    echo Failed to build the Docker image.
+    echo Failed to build the Docker images.
     exit /b %errorlevel%
 )
 

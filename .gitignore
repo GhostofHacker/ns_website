@@ -14,8 +14,9 @@ results
 /coverage
 
 # next.js
-/.next/
-/out/
+.next
+/cache
+/out
 
 # strapi
 .env
